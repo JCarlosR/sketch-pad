@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>Compare drawings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="../sketch.css">
+</head>
+<body>
+
+<div id="page">
+    <div class="header">
+		<a id="new" class="navbtn" onclick="newCanvas()">New</a>
+		<a id="new" class="navbtn" onclick="drawGuide()">Show Guide</a>
+		<a id="new" class="navbtn" onclick="compareDrawings()">Compare</a>
+        <div class="title">Sketch Pad</div>
+    </div>
+
+    <div id="content">
+    	<p style="text-align:center">Loading Canvas ...</p>
+    </div>
+</div> 
+
+<script src="../DrawingArea.js"></script>
+<script src="compare-points.js"></script>
+</body>
+</html>

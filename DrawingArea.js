@@ -1,3 +1,5 @@
+const DEFAULT_LINE_WIDTH = 5;
+
 class DrawingArea {
 
 	constructor(canvas, saveMode=false) {
@@ -8,7 +10,7 @@ class DrawingArea {
 		this.setSaveMode(saveMode);
 
         // context properties
-		this.ctx.lineWidth = 5;	
+		this.ctx.lineWidth = DEFAULT_LINE_WIDTH;	
     	this.selectColor('#000'); // default color
 
         // setup events
@@ -123,7 +125,7 @@ class DrawingArea {
 		this.ctx.stroke();
 	}
 
-	drawHistory(actions, saveRedrawn) {
+	drawHistory(actions, saveRedrawn=false) {
 		const originalSaveMode = this.save;
 		const currentColor = this.color;
 
@@ -139,7 +141,21 @@ class DrawingArea {
 				this.selectColor(action.color);
 		});
 
-		this.save = originalSaveMode;
 		this.selectColor(currentColor);
+		this.save = originalSaveMode;
+	}
+
+	drawGuide(actions) {
+		const currentColor = this.color;
+		const currentLineWidth = this.ctx.lineWidth;
+
+		// guides should use only 1 color and 1 line width
+		this.selectColor('#c9d3e2');
+		this.ctx.lineWidth = 15;
+		this.drawHistory(actions, false);
+
+		// recover original values
+		this.ctx.lineWidth = currentLineWidth;
+		this.selectColor(currentColor);	
 	}
 }
