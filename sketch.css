@@ -21,16 +21,16 @@ body {
     text-align: center;
 }
 .header {
-    top: 0px;
-    left: 0px;
-    right: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 32px;
     padding:6px;
 }
 .footer {
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 42px;
     padding:2px;    
 }
@@ -40,7 +40,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: #eee;
-    text-shadow: 0px -1px #000;
+    text-shadow: 0 -1px #000;
     padding:0 60px;
 }
 .navbtn {
@@ -51,23 +51,25 @@ body {
     line-height: 18px;
     font-size: 14px;
     color: #eee;
-    text-shadow: 0px -1px #000;
+    text-shadow: 0 -1px #000;
+    margin: 0 4px;
     border: solid 1px #111;
     border-radius: 4px;
     background-color: #404040;
-    box-shadow: 0 0 1px 1px #555,inset 0 1px 0 0 #666;     
+    box-shadow: 0 0 1px 1px #555,inset 0 1px 0 0 #666;
+    text-decoration: none;
 }
 .navbtn-hover, .navbtn:active {
     color: #222;
-    text-shadow: 0px 1px #aaa;
+    text-shadow: 0 1px #aaa;
     background-color: #aaa;
     box-shadow: 0 0 1px 1px #444,inset 0 1px 0 0 #ccc;   
 }
 #content{
     position: absolute;
     top: 44px;
-    left: 0px;
-    right: 0px;
+    left: 0;
+    right: 0;
     bottom: 46px;
     overflow:hidden;
     background-color:#ddd;
